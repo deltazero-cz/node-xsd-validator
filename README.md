@@ -1,46 +1,28 @@
-# Parse P12 (PKCS #12) certificates
+# Validating XMLs against XSD schema
 
-Verify Password & Parse Information from PKCS #12 certificates (.p12 or .pfx)
+Tool for simple validation of XML documents against a XSD schema. Using [libxml](https://github.com/GNOME/libxml2) via [libxmljs](https://github.com/libxmljs/libxmljs).
 
-Based on [node-forge](https://www.npmjs.com/package/node-forge).
+### Installation
 
-### Quick Usage
+```shell
+npm i xsd-validator
+```
+
+### Usage
 
 ```js
-import p12info from 'p12-info'
+import validateSchema from 'xml-validator'
 
-const parsed = p12info(certBuffer, certPassword)
-console.log(parsed)
+// returns true for valid documents
+validateSchema('<xml...', '<xs:schema...')
+// -> true
+
+// returns Error[] for invalid valid documents
+validateSchema('<xml...', '<xs:schema...')
+// [error, error ... ]
+
 ```
 
-```json
-{
-  "friendlyName": "Dummy Cert",
-  "subject": {
-    "countryName": "CZ",
-    "stateOrProvinceName": "Prague",
-    "localityName": "Prague",
-    "organizationName": "Delta Zero",
-    "organizationalUnitName": "Test",
-    "commonName": "Dummy Cert",
-    "emailAddress": "spam@deltazero.cz"
-  },
-  "issuer": {
-    "countryName": "CZ",
-    "stateOrProvinceName": "Prague",
-    "localityName": "Prague",
-    "organizationName": "Delta Zero",
-    "organizationalUnitName": "Test",
-    "commonName": "Dummy Cert",
-    "emailAddress": "spam@deltazero.cz"
-  },
-  "serialNumber": "00c0e2afc8f5fedcd4",
-  "version": 0,
-  "validity": {
-    "notBefore": "2022-06-15T19:29:08.000Z",
-    "notAfter": "2032-06-12T19:29:08.000Z"
-  },
-  "isValid": true
-}
-```
+### Requirements
 
+Make sure you have met the requirements for [node-gyp](https://github.com/TooTallNate/node-gyp#installation). You DO NOT need to manually install node-gyp; it comes bundled with node.
