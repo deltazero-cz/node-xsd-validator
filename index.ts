@@ -1,5 +1,7 @@
 import { parseXmlString, ValidationError, ParserOptions } from "libxmljs"
 
+// todo: bin linking
+
 export default function validateSchema(
     xml: string|Buffer,
     xsdSchema: string|Buffer,
