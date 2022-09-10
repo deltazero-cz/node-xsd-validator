@@ -1,6 +1,6 @@
 {
   "name": "xsd-validator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Validating XMLs against XSD schema",
   "author": "ΔO - David Obdržálek <david@deltazero.cz>",
   "license": "ISC",

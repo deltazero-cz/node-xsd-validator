@@ -1,11 +1,13 @@
-import { parseXmlString, ValidationError} from "libxmljs"
+import { parseXmlString, ValidationError, ParserOptions } from "libxmljs"
 
 export default function validateSchema(
     xml: string|Buffer,
-    xsdSchema: string|Buffer
+    xsdSchema: string|Buffer,
+    xmlParserOptions ?: ParserOptions,
+    xsdParserOptions ?: ParserOptions
 ) : true|ValidationError[] {
-  const parsedXML = parseXmlString(xml.toString()),
-        parsedSchema = parseXmlString(xsdSchema.toString())
+  const parsedXML = parseXmlString(xml.toString(), xmlParserOptions),
+        parsedSchema = parseXmlString(xsdSchema.toString(), xsdParserOptions)
 
   return parsedXML.validate(parsedSchema) || parsedXML.validationErrors
 }
