@@ -1,14 +1,21 @@
 {
   "name": "xsd-validator",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Validating XMLs against XSD schema",
   "author": "ΔO - David Obdržálek <david@deltazero.cz>",
   "license": "ISC",
   "keywords": [
-    "XSD", "XML",
-    "Schema", "Schema Validation", "Schema Validator",
-    "XSD Schema", "XSD Schema Validation", "XSD Schema Validator",
-    "XML Schema", "XML Schema Validation", "XML Schema Validator"
+    "XSD",
+    "XML",
+    "Schema",
+    "Schema Validation",
+    "Schema Validator",
+    "XSD Schema",
+    "XSD Schema Validation",
+    "XSD Schema Validator",
+    "XML Schema",
+    "XML Schema Validation",
+    "XML Schema Validator"
   ],
   "main": "index.js",
   "types": "index.d.ts",
@@ -19,18 +26,19 @@
     "prepare": "npm run build"
   },
   "repository": "deltazero-cz/node-xsd-validator",
-  "engines" : {
-    "node" : ">=14.0.0"
+  "engines": {
+    "node": ">=14.0.0"
   },
   "dependencies": {
-    "libxmljs": "^0.19.10"
+    "libxmljs": "^1.0.9"
   },
   "devDependencies": {
-    "@types/libxmljs": "^0.18.8",
-    "@types/node": "^16.0.0",
-    "@types/mocha": "^9.1.1",
     "@types/chai": "^4.3.3",
+    "@types/libxmljs": "^0.18.8",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^16.0.0",
+    "chai": "^4.3.6",
     "mocha": "^10.0.0",
-    "chai": "^4.3.6"
+    "typescript": "^5.1.3"
   }
 }
