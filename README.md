@@ -11,7 +11,7 @@ npm i xsd-validator
 ### Usage
 
 ```js
-import validateSchema from 'xml-validator'
+import validateSchema from 'xsd-validator'
 
 // returns true for valid documents
 validateSchema('<xml...', '<xs:schema...')
